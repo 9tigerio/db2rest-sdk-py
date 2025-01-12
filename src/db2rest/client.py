@@ -17,6 +17,7 @@ class DB2RESTClient:
 
       records = db.find_all(db_id="courtpapers", table_name='cases', filter="id=32")
       print(records)
+
     """
     def __init__(self,
                  base_url: str,
