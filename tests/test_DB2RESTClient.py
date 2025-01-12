@@ -20,5 +20,16 @@ class TestDB2RESTClient(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"data": "test_data"})
 
+    def test_request_exception(self):
+        # Mock the response of _request to raise an exception
+        mock_response = MagicMock(spec=Response)
+        mock_response.raise_for_status.side_effect = Exception("Server error")
+        self.client._request.return_value = mock_response
+
+        with self.assertRaises(Exception) as context:
+            self.client._request("GET", "/cases")
+
+        self.assertIn('Server error', str(context.exception))
+
 if __name__ == '__main__':
     unittest.main()
