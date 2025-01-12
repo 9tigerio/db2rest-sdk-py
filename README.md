@@ -6,3 +6,11 @@ Official DB2Rest project at https://github.com/9tigerio/db2rest
 
 # Installation
 `python3 -m pip install db2rest`
+
+# Development
+- Build
+  `python3 -m build`
+- Install using the locally built wheel 
+  `pip install ./dist/db2rest-0.0.1-py3-none-any.whl`
+- Test
+  (currently not implemented)
