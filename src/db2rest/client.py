@@ -7,8 +7,21 @@ from .api.mongo import MongoApi
 class DB2RESTClient:
     """
     Main client class for interacting with DB2REST API
+
+    Usage example::
+      db = DB2RESTClient(
+        base_url='https://example.com/api/v1/rdbms',
+        api_key=CLIENT_ID,
+        timeout=60
+        ).rdbms
+
+      records = db.find_all(db_id="courtpapers", table_name='cases', filter="id=32")
+      print(records)
+
     """
-    def __init__(self, base_url: str, api_key: Optional[str] = None,
+    def __init__(self,
+                 base_url: str,
+                 api_key: Optional[str] = None,
                  timeout: int = 30):
         self.base_url = base_url.rstrip('/')
         self.api_key = api_key
@@ -19,7 +32,11 @@ class DB2RESTClient:
         self.rdbms = RDBMSApi(self)
         self.mongo = MongoApi(self)
         
-    def _request(self, method: str, endpoint: str, **kwargs) -> requests.Response:
+    def _request(self,
+                 method: str,
+                 endpoint: str,
+                 **kwargs
+                 ) -> requests.Response:
         """
         Internal method to make HTTP requests
         """

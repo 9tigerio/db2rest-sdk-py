@@ -1,0 +1,24 @@
+[project]
+name = "db2rest"
+version = "0.0.1"
+authors = [
+  { name="9Tiger.io", email="info@9tiger.io"}
+]
+description = "DB2Rest Client is a Python client for DB2Rest API."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP"
+]
+keywords = ["db2rest", "rest", "api", "client", "python"]
+
+[project.urls]
+Homepage = "https://github.com/9tigerio/db2rest-sdk-py"
+Issues = "https://github.com/9tigerio/db2rest-sdk-py/issues"
+Documentation = "https://github.com/9tigerio/db2rest-sdk-py/blob/main/README.md"
+Repository = "https://github.com/9tigerio/db2rest-sdk-py"
